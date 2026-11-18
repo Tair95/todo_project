@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Регистрация — Мой Органайзер{% endblock %}
+{% block content %}
+    <div class="card">
+        <h1 style="margin-top: 0;"><i class="bi bi-person-plus"></i> Регистрация</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-primary">Создать аккаунт</button>
+        </form>
+        <p style="margin-top: 15px; font-size: 14px;">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+    </div>
+{% endblock %}
